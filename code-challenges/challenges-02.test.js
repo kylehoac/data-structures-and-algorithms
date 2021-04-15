@@ -12,15 +12,15 @@ const raisedToTheThird = (arr) => {
   // Solution code here...
   const newArray = [];
   arr.forEach((value) => {
-    const raisedNum = Math.pow(value,3)
-    newArray.push(raisedNum)
-  })
-  return newArray
+    const raisedNum = Math.pow(value,3);
+    newArray.push(raisedNum);
+  });
+  return newArray;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
@@ -30,7 +30,7 @@ const addOne = (arr) => {
     const incrementedNum = value +=1;
     newArray.push(incrementedNum);
   }
-  )
+  );
   return newArray;
 };
 
@@ -47,7 +47,7 @@ const addQuestion = (arr) => {
     const newString = value + '?';
     newArray.push(newString);
   }
-  )
+  );
   return newArray;
 };
 
@@ -84,7 +84,7 @@ const forEachTwoToThe = (arr) => {
     const raisedNum = Math.pow(2,value);
     newArray.push(raisedNum);
   }
-  )
+  );
   return newArray;
 };
 
@@ -101,7 +101,7 @@ const mapTwoToThe = (arr) => {
     const raisedNum = Math.pow(2,value);
     newArray.push(raisedNum);
   }
-  )
+  );
   return newArray;
 };
 
@@ -117,12 +117,12 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  const newArray = []
+  const newArray = [];
   charCode.map((value) => {
     const results = value.charCodeAt(arr);
     newArray.push(results);
   }
-  )
+  );
   return newArray;
 };
 
