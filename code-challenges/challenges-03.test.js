@@ -12,7 +12,7 @@ const addTwo = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     const newValue = arr[i] + 2;
     newArray.push(newValue);
-
+  }
   return newArray;
 };
 
