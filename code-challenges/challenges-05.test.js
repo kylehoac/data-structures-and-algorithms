@@ -11,15 +11,9 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // Solution code here...
-  const newArray = [];
-  people.map((firstName,lastName) => {
-    const fullName = firstName + ' ' + lastName;
-    newArray.push(fullName);
-  });
-  return newArray;
-};
+const toLastNames = people => people.map(people => `${people.firstName} ${people.lastName}`);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -29,13 +23,11 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
-  const newArray = [];
-  arr.reduce((accumulator,currentVal) => {
-    const addedVal = accumulator + currentVal;
-    newArray.push(addedVal);
-  });
-  return newArray;
+  let addedVals = arr.reduce((acc,val) => {
+    acc = acc + val;
+    return acc;
+  },0);
+  return addedVals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +43,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  let total = arr.reduce((acc,val) => {
+    acc = acc + val.purchasePrice;
+    return acc;
+  },0);
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,14 +58,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-  const counter = 0;
-  arr.reduce((acc, val) => {
-    acc = +=1 val 
-  });
-};
-
+const countNumberOfElements = arr => arr.reduce((acc,cur) => cur === '0' ? acc : acc += 1); 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -126,9 +115,10 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((acc,cur) => {
+  acc.push(cur.name);
+  return acc;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
