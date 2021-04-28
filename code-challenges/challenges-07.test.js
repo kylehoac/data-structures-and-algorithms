@@ -59,10 +59,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for (let i = 0; i < str.length; i++) {
-    result.push(str.slice[i]);
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
   }
-  // Solution code here...
   return result;
 };
 
@@ -120,7 +119,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredients => {
+    let noAmounts = ingredients.slice(ingredients.indexOf(' ') +1);
+    let withoutUnits = noAmounts.slice(noAmounts.indexOf(' ') +1);
+    result.push(withoutUnits);
+  });
   return result;
 };
 
