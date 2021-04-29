@@ -7,11 +7,9 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-  const splitString = str.split('');
-  const splicedString = splitString.splice(-1,10);
-  return splicedString;
-}
+const returnTen = (str) => {
+  return str.split('').splice(str.length - 10);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -28,7 +26,8 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let num = matrix.map(value => (Math.max(...value)));
+  return num.reduce((acc, cur) => acc < cur ? acc = cur : acc, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,8 +46,9 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let newArray = matrix.map((value) => value.reduce((a, b) => a + b, 0));
+  return newArray.reduce((a, b) => a + b, 0);
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -73,7 +73,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  const hourlySum = [];
+  for (let i = 0; i < hoursOpen.length; i++) {
+    let total = 0;
+    for (let j = 0; j < stores.length; j++) {
+      total += stores[j][i];
+    }
+    hourlySum.push(total);
+  }
+  return hourlySum;
 
 };
 
@@ -88,7 +96,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +121,13 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let treats = 0;
+  arr[2].items.pop();
+  arr[2].items.shift();
+  Object.values(arr[2].items).forEach(value => {
+    treats += value.quantity;
+  });
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
