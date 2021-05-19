@@ -28,5 +28,5 @@ When you finish the assignment each day, make a new pull request from your daily
 
 [Challenge 1 Array reverse](img.jpg)
 [Challenge 2 Array Shift](401Challenge2.png)
-[Challenge 3 Binary search](class3_diagram.png)
+[Challenge 3 Binary search](binarysearch.png)
 
