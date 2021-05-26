@@ -35,17 +35,54 @@ class LinkedList:
 
         return string
 
+    def append(self, value):
+        current = self.head
+
+        while current:
+            if current.next.value == None:
+                current.next = Node(value)
+                return
+
+            current = current.next
+
+    def insert_before(self, value, new_val):
+        current = self.head
+
+        while current:
+            if current.next.value == value:
+                old_next = current.next
+                current.next = Node(new_val, old_next)
+                return
+
+            current = current.next
+
+    def insert_after(self, value, new_val):
+        current = self.head
+
+        while current != None:
+            if current.value == value:
+                new_next = current.next
+                current = Node(new_val, new_next)
+                return
+
+            current = current.next
+
+    def kth_from_end(self, k):
+        counter = 0
+        leader = self.head
+        follower = self.head
+
+        while leader:
+            if leader.next.value is not None:
+                counter +=1
+                leader = leader.next
+                continue
+
+            if k == counter:
+                if leader.next.value is None:
+                    return follower.value
+
 class Node:
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
-
-    # def __str__(self):
-    #     string = ""
-    #     current = self.head
-
-    #     while current:
-    #         string = ( " -> " ).join(current.value)
-    #         current = current.next
-
-    #     return string

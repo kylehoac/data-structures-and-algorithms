@@ -73,3 +73,52 @@ def test_to_string_with_empty_list():
     expected = "List is empty"
 
     assert actual == expected
+
+# def test_append_node():
+#     list = LinkedList()
+#     list.insert("b")
+#     list.insert("a")
+#     list.append("c")
+
+#     actual = list.__str__()
+#     expected = "{ a } -> { b } -> { c } -> None"
+#     assert actual == expected
+
+
+def test_insert_before():
+    list = LinkedList()
+    list.insert("{ d }")
+    list.insert("{ b }")
+    list.insert("{ a }")
+    list.insert_before("{ d }","{ c }")
+
+    actual = list.__str__()
+
+    expected = "{ a } -> { b } -> { c } -> { d } -> None"
+
+    assert actual == expected
+
+# def test_insert_after():
+#     list = LinkedList()
+#     list.insert("{ c }")
+#     list.insert("{ b }")
+#     list.insert("{ a }")
+#     actual = list.insert_after("{ c }","{ d }")
+
+#     expected = list.__str__()
+
+#     expected = "{ a } -> { b } -> { c } -> { d } -> None"
+
+#     assert actual == expected
+
+def test_kth_from_end():
+    list = LinkedList()
+    list.insert("c")
+    list.insert("b")
+    list.insert("a")
+
+    actual = list.kth_from_end(0)
+    expected = "c"
+
+    assert actual == expected
+
