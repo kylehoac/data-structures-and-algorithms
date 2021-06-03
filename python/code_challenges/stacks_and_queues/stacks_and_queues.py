@@ -67,3 +67,4 @@ class Pseudo_queue:
         self.front.push(self.tail.pop())
       self.front.pop()
     return self.front.pop()
+
