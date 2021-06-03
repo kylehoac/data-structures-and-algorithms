@@ -1,4 +1,4 @@
-from linked_lists.linked_lists import LinkedList, Node
+from linked_lists.linked_lists import LinkedList, Node, zip_list
 
 # instantiates an empty linked list
 def test_import():
@@ -72,4 +72,80 @@ def test_to_string_with_empty_list():
 
     expected = "List is empty"
 
+    assert actual == expected
+
+def test_append_node():
+    list = LinkedList()
+    list.insert("{ b }")
+    list.insert("{ a }")
+    list.append("{ c }")
+
+    actual = list.__str__()
+    expected = "{ a } -> { b } -> { c } -> None"
+    assert actual == expected
+
+
+def test_insert_before():
+    list = LinkedList()
+    list.insert("{ d }")
+    list.insert("{ b }")
+    list.insert("{ a }")
+    list.insert_before("{ d }","{ c }")
+
+    actual = list.__str__()
+    expected = "{ a } -> { b } -> { c } -> { d } -> None"
+
+    assert actual == expected
+
+def test_insert_after():
+    list = LinkedList()
+    list.insert("{ c }")
+    list.insert("{ b }")
+    list.insert("{ a }")
+    list.insert_after("{ c }","{ d }")
+
+    actual = list.__str__()
+    expected = "{ a } -> { b } -> { c } -> { d } -> None"
+
+    assert actual == expected
+
+# def test_kth_from_end():
+#     list = LinkedList()
+#     list.insert("c")
+#     list.insert("b")
+#     list.insert("a")
+
+#     actual = list.kth_from_end(0)
+#     expected = "c"
+
+#     assert actual == expected
+
+def test_zip():
+    lista = LinkedList()
+    listb = LinkedList()
+
+    lista.insert("b")
+    lista.insert("a")
+    listb.insert("2")
+    listb.insert("1")
+    actual = str(zip_list(lista, listb))
+    expected = "a -> 1 -> b -> 2 -> None"
+    assert actual == expected
+
+# def test_add_odd():
+#     lista = LinkedList()
+#     lista.insert(3)
+#     lista.insert(2)
+#     lista.insert(1)
+#     actual = lista.add_odd()
+#     expected = 4
+#     assert actual == expected
+
+def test_reverse_list():
+    list = LinkedList()
+    list.insert(3)
+    list.insert(2)
+    list.insert(1)
+    actual = str(list.reverse_list(list))
+    expected = "3 -> 2 -> 1 -> None"
     assert actual == expected
