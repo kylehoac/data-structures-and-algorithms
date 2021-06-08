@@ -56,39 +56,3 @@ class BinaryTree:
 
         max_value = walk(self.root, max_value)
         return max_value
-
-class BinarySearchTree(BinaryTree):
-    def add(self, value):
-        node = Node(value)
-
-        def walk(root, node_to_add):
-            value_to_add = node_to_add.value
-
-            if not root:
-                return
-            if value_to_add < root.value:
-                if root.left:
-                    walk(root.left,node_to_add)
-                else:
-                    root.left = node_to_add
-                    pass
-            else:
-                if root.right:
-                    walk(root.right, node_to_add)
-                else:
-                    root.right = node_to_add
-
-        if not self.root:
-            self.root = Node(value)
-            return
-
-        walk(self.root, node)
-
-    def contains(self, value):
-        def walk(root, value):
-            if not root:
-                return False
-
-            return (root.value == value or walk(root.left, value) or walk(root.right,value))
-
-        walk(self.root, value)

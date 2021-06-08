@@ -1,4 +1,4 @@
-from linked_lists.linked_lists import LinkedList, Node, zip_list
+from code_challenges.linked_lists.linked_lists.linked_lists import LinkedList, Node, zip_list
 
 # instantiates an empty linked list
 def test_import():

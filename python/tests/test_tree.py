@@ -1,5 +1,5 @@
 import pytest
-from binary_tree.binary_tree import Node, BinaryTree, BinarySearchTree
+from code_challenges.tree.tree import Node, BinaryTree, BinarySearchTree
 
 
 # @pytest.mark.skip("pending")
@@ -176,4 +176,48 @@ def test_post_order():
 
     actual = tree.post_order()
     expected = [20, 40, 25, 80, 75, 50]
+    assert actual == expected
+
+#===========================================
+#========= Code Challenge 16 Tests =========
+#===========================================
+def test_max_value():
+    tree = BinaryTree()
+    tree.root = Node(1)
+    tree.root.left = Node(3)
+    tree.root.right = Node(5)
+    actual = tree.find_max_value()
+    expected = 5
+    assert actual == expected
+def test_for_floats():
+    tree = BinaryTree()
+    tree.root = Node(1.1)
+    tree.root.left = Node(3.3)
+    tree.root.right = Node(5.5)
+    actual = tree.find_max_value()
+    expected = 5.5
+    assert actual == expected
+def test_for_negatives():
+    tree = BinaryTree()
+    tree.root = Node(-1)
+    tree.root.left = Node(-3)
+    tree.root.right = Node(-5)
+    actual = tree.find_max_value()
+    expected = -1
+    assert actual == expected
+def test_for_negative_floats():
+    tree = BinaryTree()
+    tree.root = Node(-1.1)
+    tree.root.left = Node(-3.3)
+    tree.root.right = Node(-5.5)
+    actual = tree.find_max_value()
+    expected = -1.1
+    assert actual == expected
+def test_for_all_three():
+    tree = BinaryTree()
+    tree.root = Node(-1.1)
+    tree.root.left = Node(3.3)
+    tree.root.right = Node(-5)
+    actual = tree.find_max_value()
+    expected = 3.3
     assert actual == expected
