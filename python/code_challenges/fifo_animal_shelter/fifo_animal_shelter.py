@@ -27,31 +27,21 @@ class AnimalShelter:
     def __init__(self, front=None, rear=None):
         self.front = front
         self.rear = rear
+        self.dog
 
     def enqueue(self, animal=None):
-        if animal is "dog":
-            if self.front:
-                self.rear is Dog(animal)
+        if isinstance(animal, Dog):
+            self.dogs.enqueue(animal)
 
-            if not self.front:
-                self.front is Dog(animal)
-
-        if animal is "cat":
-            if self.front:
-                self.rear is Cat(animal)
-
-            if not self.front:
-                self.front is Cat(animal)
-
-        else:
-            return None
+        if isinstance(animal, Cat):
+            self.dogs.enqueue(animal)
 
     def dequeue(self, pref=None):
-        if pref is "dog":
-            return Animal(pref)
+        if pref is "dog" and self.dogs:
+            return self.dog.dequeue()
 
         if pref is "cat":
-            return "cat"
+            return self.cat.dequeue()
 
         else:
             return None
