@@ -29,7 +29,6 @@ class BinaryTree:
 
         collected_values = []
         walk(self.root,collected_values)
-        pass
 
     def post_order(self):
         def walk(root, collection):
@@ -41,7 +40,6 @@ class BinaryTree:
 
         collected_values = []
         walk(self.root,collected_values)
-        pass
 
     def find_max_value(self):
         max_value = self.root.value
@@ -56,3 +54,11 @@ class BinaryTree:
 
         max_value = walk(self.root, max_value)
         return max_value
+
+    def breadth_first(self,root):
+        queue = []
+        queue.append(root)
+        if not root:
+            return
+        while not :
+

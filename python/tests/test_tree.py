@@ -181,43 +181,56 @@ def test_post_order():
 #===========================================
 #========= Code Challenge 16 Tests =========
 #===========================================
-def test_max_value():
+# def test_max_value():
+#     tree = BinaryTree()
+#     tree.root = Node(1)
+#     tree.root.left = Node(3)
+#     tree.root.right = Node(5)
+#     actual = tree.find_max_value()
+#     expected = 5
+#     assert actual == expected
+
+# def test_for_floats():
+#     tree = BinaryTree()
+#     tree.root = Node(1.1)
+#     tree.root.left = Node(3.3)
+#     tree.root.right = Node(5.5)
+#     actual = tree.find_max_value()
+#     expected = 5.5
+#     assert actual == expected
+# def test_for_negatives():
+#     tree = BinaryTree()
+#     tree.root = Node(-1)
+#     tree.root.left = Node(-3)
+#     tree.root.right = Node(-5)
+#     actual = tree.find_max_value()
+#     expected = -1
+#     assert actual == expected
+# def test_for_negative_floats():
+#     tree = BinaryTree()
+#     tree.root = Node(-1.1)
+#     tree.root.left = Node(-3.3)
+#     tree.root.right = Node(-5.5)
+#     actual = tree.find_max_value()
+#     expected = -1.1
+#     assert actual == expected
+# def test_for_all_three():
+#     tree = BinaryTree()
+#     tree.root = Node(-1.1)
+#     tree.root.left = Node(3.3)
+#     tree.root.right = Node(-5)
+#     actual = tree.find_max_value()
+#     expected = 3.3
+#     assert actual == expected
+#===========================================
+#========= Code Challenge 17 Tests =========
+#===========================================
+
+def test_ret_in_order():
     tree = BinaryTree()
     tree.root = Node(1)
-    tree.root.left = Node(3)
-    tree.root.right = Node(5)
-    actual = tree.find_max_value()
-    expected = 5
-    assert actual == expected
-def test_for_floats():
-    tree = BinaryTree()
-    tree.root = Node(1.1)
-    tree.root.left = Node(3.3)
-    tree.root.right = Node(5.5)
-    actual = tree.find_max_value()
-    expected = 5.5
-    assert actual == expected
-def test_for_negatives():
-    tree = BinaryTree()
-    tree.root = Node(-1)
-    tree.root.left = Node(-3)
-    tree.root.right = Node(-5)
-    actual = tree.find_max_value()
-    expected = -1
-    assert actual == expected
-def test_for_negative_floats():
-    tree = BinaryTree()
-    tree.root = Node(-1.1)
-    tree.root.left = Node(-3.3)
-    tree.root.right = Node(-5.5)
-    actual = tree.find_max_value()
-    expected = -1.1
-    assert actual == expected
-def test_for_all_three():
-    tree = BinaryTree()
-    tree.root = Node(-1.1)
-    tree.root.left = Node(3.3)
-    tree.root.right = Node(-5)
-    actual = tree.find_max_value()
-    expected = 3.3
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    actual = BinaryTree.breadth_first(tree)
+    expected = [1,2,3]
     assert actual == expected
