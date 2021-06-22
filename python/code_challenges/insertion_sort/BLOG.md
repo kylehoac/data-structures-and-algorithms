@@ -25,36 +25,36 @@ Sample Array:
 
 __*Pass 1*__
 
-![Pass1](code_challenges/insertion_sort/insertion-sort-pass1.jpg)
+![Pass1](insertion-sort-pass1.jpg)
 
 In the first pass, "4" is at the second index of the list, and is the declared as the "chosen number". The function loops through everything that is on the left side of the chosen number, and if it is less than them, will replace their position in the list, and the compared number will be moved to the right. The number to the right of the chosen number's previous position is then declared as the new chosen number
 
 __*Pass 2*__
 
-![Pass2](code_challenges/insertion_sort/insertion-sort-pass2.jpg)
+![Pass2](insertion-sort-pass2.jpg)
 
 The function repeats the process and in this case, the chosen number is greater than all of the numbers to the left of it so it remains in the same position. The number to the right of the chosen number's previous position is then declared as the new chosen number
 
 __*Pass 3*__
 
-![Pass3](code_challenges/insertion_sort/insertion-sort-pass3.jpg)
+![Pass3](insertion-sort-pass3.jpg)
 
 The function repeats the process and in this case, the chosen number is greater than all of the numbers to the left of it so it remains in the same position. The number to the right of the chosen number's previous position is then declared as the new chosen number
 
 __*Pass 4*__
 
-![Pass4](code_challenges/insertion_sort/insertion-sort-pass4.jpg)
+![Pass4](insertion-sort-pass4.jpg)
 
 The chosen number is less than the previous 2 numbers in the list, so the chosen number takes the spot of the first number it was compared to, and on the next loop through, takes the spot of the second number it was compared to. Both compared numbers move to the right by one position. The number to the right of the chosen number's previous position is then declared as the new chosen number
 
 __*Pass 5*__
 
-![Pass5](code_challenges/insertion_sort/insertion-sort-pass5.jpg)
+![Pass5](insertion-sort-pass5.jpg)
 
 The chosen number is less than the previous 4 numbers in the list, so the chosen number takes the spot of the first through fourth number it was compared to, and by the end of all of those loops, takes the spot of the last number it was compared to. All compared numbers move to the right by one position. The loop ends as there is no more numbers that can become the chosen number
 
 ## Efficiency
 
-Time - O(n)
+Time - O(n
 
 Space O(1)
