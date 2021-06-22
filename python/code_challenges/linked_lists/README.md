@@ -7,7 +7,9 @@ Add functions to our linkedlist class that could append a node to the end of the
 [WhiteBoard](codechallenge.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
+Time - O(n)
+Space - O(n)
 ## Solution
+
 <!-- Show how to run your code, and examples of it in action -->

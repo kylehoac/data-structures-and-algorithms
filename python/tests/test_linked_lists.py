@@ -149,3 +149,14 @@ def test_reverse_list():
     actual = str(list.reverse_list(list))
     expected = "3 -> 2 -> 1 -> None"
     assert actual == expected
+
+def test_zip_lists():
+    list_1 = LinkedList()
+    list_2 = LinkedList()
+    list_1.append(1)
+    list_1.append(2)
+    list_2.append('a')
+    list_2.append('b')
+    actual = zip_list(list_1, list_2).__str__()
+    expected = "1 -> a -> 2 -> b -> None"
+    assert actual == expected

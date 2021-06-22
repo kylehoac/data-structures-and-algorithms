@@ -21,6 +21,9 @@ class Stack:
     if self.top:
       return self.top.value
     return
+  def is_empty(self):
+      if not self.top:
+        return self.top is None
 
 class Queue:
     def __init__(self, front=None):
